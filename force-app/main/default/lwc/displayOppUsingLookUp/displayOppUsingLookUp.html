@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Display Opportunities" icon-name="standard:opportunity" class="slds-m-around_medium">
+
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search Account" value={searchTerm} onchange={handleSearch}
+                placeholder="type here...">
+            </lightning-input>
+            <template lwc:if={hasRecords}>
+                <template if:false={recordClicked}>
+                    <ul class="slds-listbox_vertical slds-box " role="presentation">
+                        <template for:each={searchResults} for:item="result">
+                            <li key={result.Id} class="slds-listbox__item" role="presentation"
+                                onclick={handleResultSelection} data-name={result.Name} data-id={result.Id}>
+                                <div id="option229"
+                                    class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                    role="option">
+                                    <span class="slds-media__figure slds-listbox__option-icon">
+                                        <span class="slds-icon_container slds-icon-standard-account"
+                                            title="Description of icon when needed">
+                                            <svg class="slds-icon" aria-hidden="true">
+                                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account">
+                                                </use>
+                                            </svg>
+                                            <span class="slds-assistive-text">Account</span>
+                                        </span>
+                                    </span>
+                                    <span class="slds-media__body">
+                                        <span class="slds-media__body">
+                                            <span class="slds-truncate" title={result.Name}>{result.Name}</span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={recordClicked}>
+                    <p class="slds-m-around_small">Opportunities associated with the selected Account: </p>
+                    <template lwc:if={records}>
+                        <div class="slds-table_bordered slds-table_col-bordered">
+                            <lightning-datatable key-field="Id" data={records} columns={columns}
+                                hide-checkbox-column="true">
+                            </lightning-datatable>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
