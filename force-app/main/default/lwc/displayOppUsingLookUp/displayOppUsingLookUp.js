@@ -22,12 +22,12 @@ export default class DisplayOppUsingLookUp extends LightningElement {
     parentRecordId: '$selectedId',
     relatedListId: 'Opportunities',
     fields: ['Opportunity.Id', 'Opportunity.Name', 'Opportunity.Amount'],
-    where: '{Amount: { gt: 5000 }}'
+    where: '{Amount: { gt: 10000 }}'
   })
   listInfo({ error, data }) {
     if (data) {
       this.records = data.records.map(record => ({
-                amountClass: record.fields.Amount.value > 10000 ? "slds-icon-custom-custom6 slds-text-color_default" : '',
+                amountClass: record.fields.Amount.value > 50000 ? "slds-icon-custom-custom6 slds-text-color_default" : '',
                 Id: record.fields.Id.value,
                 Name: record.fields.Name.value,
                 Amount: record.fields.Amount.value,

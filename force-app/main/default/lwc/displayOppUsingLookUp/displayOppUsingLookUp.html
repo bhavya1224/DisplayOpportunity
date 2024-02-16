@@ -14,19 +14,13 @@
                                 <div id="option229"
                                     class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
                                     role="option">
-                                    <span class="slds-media__figure slds-listbox__option-icon">
-                                        <span class="slds-icon_container slds-icon-standard-account"
-                                            title="Description of icon when needed">
-                                            <svg class="slds-icon" aria-hidden="true">
-                                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account">
-                                                </use>
-                                            </svg>
-                                            <span class="slds-assistive-text">Account</span>
-                                        </span>
-                                    </span>
+                                    <lightning-icon icon-name="standard:account" alternative-text="Event">
+                                    </lightning-icon>
+
                                     <span class="slds-media__body">
                                         <span class="slds-media__body">
-                                            <span class="slds-truncate" title={result.Name}>{result.Name}</span>
+                                            <span class="slds-truncate slds-m-left_x-small"
+                                                title={result.Name}>{result.Name}</span>
                                         </span>
                                     </span>
                                 </div>
