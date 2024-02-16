@@ -33,7 +33,7 @@ export default class DisplayOppUsingLookUp extends LightningElement {
                 Amount: record.fields.Amount.value,
             }));
     
-      console.log('records=> '+ JSON.stringify(this.records));
+      console.log('records=>  '+ JSON.stringify(this.records));
       this.error = undefined;
     } else if (error) {
       this.error = error;
